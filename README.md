@@ -1,2 +1,2 @@
 # arduinos
-popisek
+Dneska přemýšlím nad svým arduinem
