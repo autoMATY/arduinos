@@ -5,3 +5,7 @@ Září:Problematika arduina(čerpání informací).
 Říjen:Schéma
 Listopad:Pracování.
 Prosinec: Dokončení a vytváření prezentace s dokumentací.
+
+
+
+Zdroje: http://navody.arduino-shop.cz/navody-k-produktum/teplotni-senzor-ds18b20.html
