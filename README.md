@@ -11,4 +11,4 @@ Prosinec: Dokončení a vytváření prezentace s dokumentací.
 
 
 
-Zdroje: http://navody.arduino-shop.cz/navody-k-produktum/teplotni-senzor-ds18b20.html
+Zdroje: http://www.ebay.com/itm/ESP32-ESP32S-CP2102-Development-Board-2-4GHz-Dual-Mode-WiFi-Bluetooth-Antenna-/201853283621?hash=item2eff64ad25:g:OTMAAOSwXk5ZbzPV
