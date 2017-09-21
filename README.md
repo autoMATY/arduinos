@@ -10,6 +10,9 @@ Listopad:Pracování.
 Prosinec: Dokončení a vytváření prezentace s dokumentací.
 
 
+20.9 a 21.9
+Seznámení s arduinem. Instalace Arduino IDE
+
 
 Zdroje: http://www.ebay.com/itm/ESP32-ESP32S-CP2102-Development-Board-2-4GHz-Dual-Mode-WiFi-Bluetooth-Antenna-/201853283621?hash=item2eff64ad25:g:OTMAAOSwXk5ZbzPV
 
