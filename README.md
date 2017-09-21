@@ -24,6 +24,12 @@ void loop() {
 }
 
 
+tutorial https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/windows.md
+
+
+exec: "C:\\Users\\Bezdek\\Documents\\Arduino\\hardware\\espressif\\esp32/tools/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++": file does not exist
+Nastala chyba při kompilaci u desky ESP32 Dev Module.
+
 
 Zdroje: http://www.ebay.com/itm/ESP32-ESP32S-CP2102-Development-Board-2-4GHz-Dual-Mode-WiFi-Bluetooth-Antenna-/201853283621?hash=item2eff64ad25:g:OTMAAOSwXk5ZbzPV
 
