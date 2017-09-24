@@ -10,7 +10,7 @@ Listopad:Pracování.
 Prosinec: Dokončení a vytváření prezentace s dokumentací.
 
 
-20.9 a 21.9
+# 20.9 a 21.9
 Seznámení s arduinem. Instalace Arduino IDE,GIT
 
 void setup() {
@@ -23,7 +23,8 @@ void loop() {
  //2sekundy
 }
 
-# arduinos
+# 22.9 a 24.9
+https://www.arduinotech.cz/inpage/nodemcu-wifi-modul-s-esp8266-496/#
 
 tutorial https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/windows.md
 
