@@ -27,6 +27,7 @@ void loop() {
 https://www.arduinotech.cz/inpage/nodemcu-wifi-modul-s-esp8266-496/#
 
 tutorial https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/windows.md
+http://navody.arduino-shop.cz/navody-k-produktum/vyvojova-deska-esp32.html
 
 
 exec: "C:\\Users\\Bezdek\\Documents\\Arduino\\hardware\\espressif\\esp32/tools/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++": file does not exist
