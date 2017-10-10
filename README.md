@@ -40,6 +40,22 @@ https://home-assistant.io/blog/2015/10/11/measure-temperature-with-esp8266-and-r
 
 
 
-#2.10
-
-https://github.com/espressif/ESP31_RTOS_SDK
+# 10.10
+int led = 13; // definování proměnné pro LED diodu
+void setup() {
+ // nastavení led jako výstup
+ pinMode(led, OUTPUT);
+ }
+void blikani() // funkce pro blikání
+ {
+ digitalWrite(13, HIGH); // zapne LED
+ delay(2000); // vyčká 2 sekundy
+ digitalWrite(13, LOW); // vypne LED
+ delay(1000); // vyčká 1 sekundu
+ }
+void loop() {
+ blikani(); // zavolání funkce blikání
+ delay(500); // vyčká 0,5 sekundy
+ blikani(); // znovuzavolání funkce blikání
+ delay(1000); // vyčká 1 sekundu
+ }
