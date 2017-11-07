@@ -38,25 +38,69 @@ https://home-assistant.io/blog/2015/10/11/measure-temperature-with-esp8266-and-r
 
 
 
-# 10.10
-int led = 13; // definování proměnné pro LED diodu
+# 7.11
+#define LED 2
+// stavová proměnná pro řízení LED diody
+bool stav = LOW;
+
 void setup() {
- // nastavení led jako výstup
- pinMode(led, OUTPUT);
- }
-void blikani() // funkce pro blikání
- {
- digitalWrite(13, HIGH); // zapne LED
- delay(2000); // vyčká 2 sekundy
- digitalWrite(13, LOW); // vypne LED
- delay(1000); // vyčká 1 sekundu
- }
+  Serial.begin(115200);
+  // nastavení výstupu pro LED diodu
+  pinMode(LED, OUTPUT);
+}
+
 void loop() {
- blikani(); // zavolání funkce blikání
- delay(500); // vyčká 0,5 sekundy
- blikani(); // znovuzavolání funkce blikání
- delay(1000); // vyčká 1 sekundu
- }
+  // blikání LED diodou za pomoci negace stavu
+  digitalWrite(LED, stav);
+  stav = !stav;
+  delay(500);
+}
+
+
+// připojení potřebné knihovny
+#include "WiFi.h"
+
+void setup() {
+  // nastavení komunikace po sériové lince
+  Serial.begin(9600);
+  // nastavení WiFI do módu stanice pro skenování
+  WiFi.mode(WIFI_STA);
+  // odpojení od sítí pro povolení skenování
+  WiFi.disconnect();
+  delay(100);
+}
+void loop() {
+  // zahájení skenování
+  Serial.println("scan start");
+  // načtení počtu viditelných sítí do proměnné
+  int n = WiFi.scanNetworks();
+  Serial.println("scan done");
+  // pokud nebyly načteny žádné sítě, vypiš informaci
+  // po sériové lince
+  if (n == 0) {
+    Serial.println("no networks found");
+  } 
+  // v opačném případě vypiš všechny dostupné informace
+  // o všech sítích v okolí
+  else {
+    Serial.print(n);
+    Serial.println(" networks found");
+    for (int i = 0; i < n; ++i) {
+      // vytiskni název (SSID) a sílu signálu (RSSI)
+      Serial.print(i + 1);
+      Serial.print(": ");
+      Serial.print(WiFi.SSID(i));
+      Serial.print(" (");
+      Serial.print(WiFi.RSSI(i));
+      Serial.print(")");
+      Serial.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN) ? " " : "*");
+      delay(10);
+    }
+  }
+  Serial.println("");
+  // pauza před novým skenováním
+  delay(5000);
+}
  
  https://esp8266.cz/programovani/esp8266-a-arduino/
  https://github.com/whitecatboard/Lua-RTOS-ESP32
