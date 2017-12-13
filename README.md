@@ -1,27 +1,7 @@
 # arduinos
-Mým závěrečným projektem bude vytvořeni teploměru pomocí arduino uno r3 a následné zapsaní na výpis internetu do kalendáře, kde bude možnost vyhlédávání určitého data a grafu.
+Mým závěrečným projektem bude vytvořeni teploměru pomocí esp  r3 a následné zapsaní na výpis internetu do kalendáře, kde bude možnost vyhlédávání určitého data a grafu.
 
 
-Na můj teploměr budu potřebovat: Arduiono uno r3, tlačítko, displej.........
-
-Září:Problematika arduina(čerpání informací).
-Říjen:Schéma
-Listopad:Pracování.
-Prosinec: Dokončení a vytváření prezentace s dokumentací.
-
-
-# 20.9 a 21.9
-Seznámení s arduinem. Instalace Arduino IDE,GIT
-
-void setup() {
-   Serial.begin(115200);
-}
-
-void loop() {
-  Serial.println("Hello World");
- delay(2000);
- //2sekundy
-}
 
 # 22.9 a 24.9
 https://www.arduinotech.cz/inpage/nodemcu-wifi-modul-s-esp8266-496/#
@@ -47,35 +27,6 @@ https://gyazo.com/75c50facc3415511aeadd277a285b74f
  
  
 # 11.12 
- // Teplotní čidlo DS18B20
 
-// připojení knihoven
-#include <OneWire.h>
-#include <DallasTemperature.h>
-
-// nastavení čísla vstupního pinu
-const int pinCidlaDS = 4;
-// vytvoření instance oneWireDS z knihovny OneWire
-OneWire oneWireDS(pinCidlaDS);
-// vytvoření instance senzoryDS z knihovny DallasTemperature
-DallasTemperature senzoryDS(&oneWireDS);
-
-void setup(void) {
-  // komunikace přes sériovou linku rychlostí 9600 baud
-  Serial.begin(9600);
-  // zapnutí komunikace knihovny s teplotním čidlem
-  senzoryDS.begin();
-}
-
-void loop(void) {
-  // načtení informací ze všech připojených čidel na daném pinu
-  senzoryDS.requestTemperatures();
-  // výpis teploty na sériovou linku, při připojení více čidel
-  // na jeden pin můžeme postupně načíst všechny teploty
-  // pomocí změny čísla v závorce (0) - pořadí dle unikátní adresy čidel
-  Serial.print("Teplota cidla DS18B20: ");
-  Serial.print(senzoryDS.getTempCByIndex(0));
-  Serial.println(" stupnu Celsia");
-  // pauza pro přehlednější výpis
-  delay(1000);
-}
+thing speak
+https://www.youtube.com/watch?v=kKKJcMZ8JqA&t=5s
