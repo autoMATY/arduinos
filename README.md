@@ -30,3 +30,5 @@ https://gyazo.com/75c50facc3415511aeadd277a285b74f
 
 thing speak
 https://www.youtube.com/watch?v=kKKJcMZ8JqA&t=5s
+
+https://www.mathworks.com/help/thingspeak/measure-arduino-wifi-signal-strength-with-esp32.html?requestedDomain=www.mathworks.com
