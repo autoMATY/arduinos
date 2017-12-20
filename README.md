@@ -32,3 +32,7 @@ thing speak
 https://www.youtube.com/watch?v=kKKJcMZ8JqA&t=5s
 
 https://www.mathworks.com/help/thingspeak/measure-arduino-wifi-signal-strength-with-esp32.html?requestedDomain=www.mathworks.com
+
+# 20.12 
+http://www.instructables.com/id/Post-to-Google-Docs-with-Arduino/
+https://temboo.com/arduino/others/update-google-spreadsheet
