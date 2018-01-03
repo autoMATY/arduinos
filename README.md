@@ -36,3 +36,5 @@ https://www.mathworks.com/help/thingspeak/measure-arduino-wifi-signal-strength-w
 # 20.12 
 http://www.instructables.com/id/Post-to-Google-Docs-with-Arduino/
 https://temboo.com/arduino/others/update-google-spreadsheet
+
+https://github.com/zhouhan0126/WIFIMANAGER-ESP32
