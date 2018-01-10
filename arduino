@@ -1,0 +1,59 @@
+#include <DNSServer.h>
+#include <ESP8266WebServer.h>
+#include <WebServer.h>
+#include <WiFiManager.h>
+#include <OneWire.h>
+ 
+ 
+#include "WiFi.h"
+ 
+#include <DallasTemperature.h>
+ 
+const int pinCidlaDS = 4;
+OneWire oneWireDS(pinCidlaDS);
+DallasTemperature senzoryDS(&oneWireDS);
+ 
+ 
+const char WEBSITE[] = "api.pushingbox.com"; //pushingbox API server
+const String devid = "vA544F0871CBF912"; //device ID from Pushingbox 
+ 
+ 
+ 
+void setup()
+{
+ Serial.begin(115200);
+  senzoryDS.begin();
+  WiFiManager wifiManager;
+  wifiManager.autoConnect("AP-NAME", "AP-PASSWORD");
+  
+}
+ 
+void loop() {
+  senzoryDS.requestTemperatures();
+  float tempData=senzoryDS.getTempCByIndex(0);
+  // výpis teploty na sériovou linku, při připojení více čidel
+  // na jeden pin můžeme postupně načíst všechny teploty
+  // pomocí změny čísla v závorce (0) - pořadí dle unikátní adresy čidel
+  Serial.print("Teplota je: ");
+  Serial.print(tempData);
+  Serial.println(" stupnu Celsia");
+ 
+  WiFiClient client;  //Instantiate WiFi object
+ 
+    //Start or API service using our WiFi Client through PushingBox
+    if (client.connect(WEBSITE, 80))
+      { 
+         client.print("GET /pushingbox?devid=" + devid
+       + "&tempData="+ (String) tempData
+         );
+ 
+      client.println(" HTTP/1.1"); 
+      client.print("Host: ");
+      client.println(WEBSITE);
+      client.println("User-Agent: ESP8266/1.0");
+      client.println("Connection: close");
+      client.println();
+      }
+  // pauza pro přehlednější výpis
+  delay(11111000);
+}
