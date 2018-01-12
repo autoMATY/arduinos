@@ -8,14 +8,14 @@
 #include "WiFi.h"
  
 #include <DallasTemperature.h>
- 
+//připojení pinu a potřebných knihoven. 
 const int pinCidlaDS = 4;
 OneWire oneWireDS(pinCidlaDS);
 DallasTemperature senzoryDS(&oneWireDS);
  
  
 const char WEBSITE[] = "api.pushingbox.com"; //pushingbox API server
-const String devid = "vA544F0871CBF912"; //device ID from Pushingbox 
+const String devid = "vA544F0871CBF912"; // ID z Pushingbox 
  
  
  
@@ -38,7 +38,7 @@ void loop() {
   Serial.print(tempData);
   Serial.println(" stupnu Celsia");
  
-  WiFiClient client;  //Instantiate WiFi object
+  WiFiClient client;  // WiFi object
  
     //Start or API service using our WiFi Client through PushingBox
     if (client.connect(WEBSITE, 80))
